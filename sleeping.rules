@@ -1,0 +1,171 @@
+\START-GROUP TIME
+  MIDNIGHT
+  MORNING
+  MIDDAY
+  AFTERNOON
+  EVENING
+\END-GROUP
+
+\START-GROUP DURATION
+  FLASHING
+  FAST
+  SHORT
+  AVERAGE
+  LONG
+  EXTENSIVE
+  UNFINISHED
+\END-GROUP
+
+\START-GROUP VARIETY
+  NONE
+  POOR
+  AVERAGE
+  RICH
+\END-GROUP
+
+\START-GROUP NOISE
+  SILENT
+  NOISY
+  TURBULENT
+\END-GROUP
+
+\START-GROUP CONFIDENCE
+  ILLOGIC
+  UNLIKELY
+  UNCERTAIN
+  LIKELY
+  CERTAIN
+\END-GROUP
+
+\START-MAPPING
+  TIME
+  DURATION
+  NOISE
+  VARIETY
+  \INTO CONFIDENCE
+\END-MAPPING
+
+\RULE *              *              TURBULENT      *              ILLOGIC
+\RULE MIDNIGHT       SHORT          SILENT         *              LIKELY
+\RULE MIDNIGHT       SHORT          NOISY          NONE           LIKELY
+\RULE MIDNIGHT       SHORT          NOISY          POOR           UNCERTAIN
+\RULE MIDNIGHT       SHORT          NOISY          AVERAGE        UNLIKELY
+\RULE MIDNIGHT       SHORT          NOISY          RICH           UNLIKELY
+\RULE MIDNIGHT       AVERAGE        SILENT         *              CERTAIN
+\RULE MIDNIGHT       AVERAGE        NOISY          NONE           LIKELY
+\RULE MIDNIGHT       AVERAGE        NOISY          POOR           LIKELY
+\RULE MIDNIGHT       AVERAGE        NOISY          AVERAGE        UNCERTAIN
+\RULE MIDNIGHT       AVERAGE        NOISY          RICH           UNCERTAIN
+\RULE MIDNIGHT       LONG           SILENT         *              CERTAIN
+\RULE MIDNIGHT       LONG           NOISY          NONE           CERTAIN
+\RULE MIDNIGHT       LONG           NOISY          POOR           LIKELY
+\RULE MIDNIGHT       LONG           NOISY          AVERAGE        LIKELY
+\RULE MIDNIGHT       LONG           NOISY          RICH           UNCERTAIN
+\RULE MIDNIGHT       EXTENSIVE      SILENT         *              LIKELY
+\RULE MIDNIGHT       EXTENSIVE      NOISY          NONE           LIKELY
+\RULE MIDNIGHT       EXTENSIVE      NOISY          POOR           LIKELY
+\RULE MIDNIGHT       EXTENSIVE      NOISY          AVERAGE        UNCERTAIN
+\RULE MIDNIGHT       EXTENSIVE      NOISY          RICH           UNCERTAIN
+\RULE MIDNIGHT       UNFINISHED     SILENT         *              LIKELY
+\RULE MIDNIGHT       UNFINISHED     NOISY          NONE           LIKELY
+\RULE MIDNIGHT       UNFINISHED     NOISY          POOR           UNCERTAIN
+\RULE MIDNIGHT       UNFINISHED     NOISY          AVERAGE        UNLIKELY
+\RULE MIDNIGHT       UNFINISHED     NOISY          RICH           UNLIKELY
+\RULE MORNING        SHORT          SILENT         *              UNCERTAIN
+\RULE MORNING        SHORT          NOISY          NONE           UNCERTAIN
+\RULE MORNING        SHORT          NOISY          POOR           UNCERTAIN
+\RULE MORNING        SHORT          NOISY          AVERAGE        UNLIKELY
+\RULE MORNING        SHORT          NOISY          RICH           UNLIKELY
+\RULE MORNING        AVERAGE        SILENT         *              LIKELY
+\RULE MORNING        AVERAGE        NOISY          NONE           UNCERTAIN
+\RULE MORNING        AVERAGE        NOISY          POOR           UNCERTAIN
+\RULE MORNING        AVERAGE        NOISY          AVERAGE        UNCERTAIN
+\RULE MORNING        AVERAGE        NOISY          RICH           UNLIKELY
+\RULE MORNING        LONG           SILENT         *              LIKELY
+\RULE MORNING        LONG           NOISY          NONE           LIKELY
+\RULE MORNING        LONG           NOISY          POOR           UNCERTAIN
+\RULE MORNING        LONG           NOISY          AVERAGE        UNCERTAIN
+\RULE MORNING        LONG           NOISY          RICH           UNLIKELY
+\RULE MORNING        EXTENSIVE      SILENT         *              LIKELY
+\RULE MORNING        EXTENSIVE      NOISY          NONE           UNCERTAIN
+\RULE MORNING        EXTENSIVE      NOISY          POOR           UNCERTAIN
+\RULE MORNING        EXTENSIVE      NOISY          AVERAGE        UNCERTAIN
+\RULE MORNING        EXTENSIVE      NOISY          RICH           UNLIKELY
+\RULE MORNING        UNFINISHED     SILENT         *              LIKELY
+\RULE MORNING        UNFINISHED     NOISY          NONE           LIKELY
+\RULE MORNING        UNFINISHED     NOISY          POOR           UNCERTAIN
+\RULE MORNING        UNFINISHED     NOISY          AVERAGE        UNLIKELY
+\RULE MORNING        UNFINISHED     NOISY          RICH           UNLIKELY
+\RULE MIDDAY         SHORT          SILENT         *              UNLIKELY
+\RULE MIDDAY         SHORT          NOISY          NONE           UNLIKELY
+\RULE MIDDAY         SHORT          NOISY          POOR           ILLOGIC
+\RULE MIDDAY         SHORT          NOISY          AVERAGE        ILLOGIC
+\RULE MIDDAY         SHORT          NOISY          RICH           ILLOGIC
+\RULE MIDDAY         AVERAGE        SILENT         *              UNLIKELY
+\RULE MIDDAY         AVERAGE        NOISY          NONE           UNLIKELY
+\RULE MIDDAY         AVERAGE        NOISY          POOR           ILLOGIC
+\RULE MIDDAY         AVERAGE        NOISY          AVERAGE        ILLOGIC
+\RULE MIDDAY         AVERAGE        NOISY          RICH           ILLOGIC
+\RULE MIDDAY         LONG           SILENT         *              UNCERTAIN
+\RULE MIDDAY         LONG           NOISY          NONE           UNCERTAIN
+\RULE MIDDAY         LONG           NOISY          POOR           UNLIKELY
+\RULE MIDDAY         LONG           NOISY          AVERAGE        UNLIKELY
+\RULE MIDDAY         LONG           NOISY          RICH           UNLIKELY
+\RULE MIDDAY         EXTENSIVE      SILENT         *              UNCERTAIN
+\RULE MIDDAY         EXTENSIVE      NOISY          NONE           UNLIKELY
+\RULE MIDDAY         EXTENSIVE      NOISY          POOR           ILLOGIC
+\RULE MIDDAY         EXTENSIVE      NOISY          AVERAGE        ILLOGIC
+\RULE MIDDAY         EXTENSIVE      NOISY          RICH           ILLOGIC
+\RULE MIDDAY         UNFINISHED     SILENT         *              UNLIKELY
+\RULE MIDDAY         UNFINISHED     NOISY          POOR           ILLOGIC
+\RULE MIDDAY         UNFINISHED     NOISY          AVERAGE        ILLOGIC
+\RULE MIDDAY         UNFINISHED     NOISY          RICH           ILLOGIC
+\RULE AFTERNOON      SHORT          SILENT         *              UNCERTAIN
+\RULE AFTERNOON      SHORT          NOISY          NONE           UNCERTAIN
+\RULE AFTERNOON      SHORT          NOISY          POOR           UNCERTAIN
+\RULE AFTERNOON      SHORT          NOISY          AVERAGE        UNCERTAIN
+\RULE AFTERNOON      SHORT          NOISY          RICH           UNLIKELY
+\RULE AFTERNOON      AVERAGE        SILENT         *              UNCERTAIN
+\RULE AFTERNOON      AVERAGE        NOISY          NONE           UNCERTAIN
+\RULE AFTERNOON      AVERAGE        NOISY          POOR           UNLIKELY
+\RULE AFTERNOON      AVERAGE        NOISY          AVERAGE        UNLIKELY
+\RULE AFTERNOON      AVERAGE        NOISY          RICH           UNLIKELY
+\RULE AFTERNOON      LONG           SILENT         *              LIKELY
+\RULE AFTERNOON      LONG           NOISY          *              UNLIKELY
+\RULE AFTERNOON      EXTENSIVE      SILENT         *              LIKELY
+\RULE AFTERNOON      EXTENSIVE      NOISY          NONE           UNCERTAIN
+\RULE AFTERNOON      EXTENSIVE      NOISY          POOR           UNLIKELY
+\RULE AFTERNOON      EXTENSIVE      NOISY          AVERAGE        UNLIKELY
+\RULE AFTERNOON      EXTENSIVE      NOISY          RICH           UNLIKELY
+\RULE AFTERNOON      UNFINISHED     SILENT         *              UNCERTAIN
+\RULE AFTERNOON      UNFINISHED     NOISY          NONE           UNCERTAIN
+\RULE AFTERNOON      UNFINISHED     NOISY          POOR           UNLIKELY
+\RULE AFTERNOON      UNFINISHED     NOISY          AVERAGE        UNLIKELY
+\RULE AFTERNOON      UNFINISHED     NOISY          RICH           UNLIKELY
+\RULE EVENING        SHORT          SILENT         *              LIKELY
+\RULE EVENING        SHORT          NOISY          NONE           LIKELY
+\RULE EVENING        SHORT          NOISY          POOR           UNCERTAIN
+\RULE EVENING        SHORT          NOISY          AVERAGE        UNCERTAIN
+\RULE EVENING        SHORT          NOISY          RICH           UNLIKELY
+\RULE EVENING        AVERAGE        SILENT         *              LIKELY
+\RULE EVENING        AVERAGE        NOISY          NONE           LIKELY
+\RULE EVENING        AVERAGE        NOISY          POOR           UNCERTAIN
+\RULE EVENING        AVERAGE        NOISY          AVERAGE        UNCERTAIN
+\RULE EVENING        AVERAGE        NOISY          RICH           UNCERTAIN
+\RULE EVENING        LONG           SILENT         *              CERTAIN
+\RULE EVENING        LONG           NOISY          NONE           LIKELY
+\RULE EVENING        LONG           NOISY          POOR           LIKELY
+\RULE EVENING        LONG           NOISY          AVERAGE        UNCERTAIN
+\RULE EVENING        LONG           NOISY          RICH           UNCERTAIN
+\RULE EVENING        EXTENSIVE      SILENT         *              CERTAIN
+\RULE EVENING        EXTENSIVE      NOISY          NONE           CERTAIN
+\RULE EVENING        EXTENSIVE      NOISY          POOR           CERTAIN
+\RULE EVENING        EXTENSIVE      NOISY          AVERAGE        LIKELY
+\RULE EVENING        EXTENSIVE      NOISY          RICH           LIKELY
+\RULE EVENING        UNFINISHED     SILENT         *              LIKELY
+\RULE EVENING        UNFINISHED     NOISY          NONE           LIKELY
+\RULE EVENING        UNFINISHED     NOISY          POOR           LIKELY
+\RULE EVENING        UNFINISHED     NOISY          AVERAGE        UNCERTAIN
+\RULE EVENING        UNFINISHED     NOISY          RICH           UNLIKELY
+
+\RULE *              *              *              *              ILLOGIC
